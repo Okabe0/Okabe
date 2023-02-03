@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OkabeSan</title>
+    <style>
+      body {
+        height: 720px;
+        width: 1500px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: radial-gradient(#000, #3e3e3e);
+        background-size: cover;
+        overflow: hidden;
+      }
+      h1, p, a {
+        transition: all 0.5s;
+        font-family: Comic Sans ms, sans-serif;
+      }
+      h1 {
+        color: white;
+        font-size: 72px;
+        text-align: top center;
+        margin: 0;
+        padding: 0;
+      }
+      h1:hover, p:hover, a:hover {
+        transform: scale(1.2);
+      }
+      p {
+        font-size: 34px;
+        text-align: center;
+        margin: 34px;
+        color: white;
+      }
+      a {
+        font-size: 34px;
+        text-align: center;
+        margin: 34px;
+        text-decoration: none;
+        color: white;
+      }
+      .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        opacity: 0;
+        animation: animateStar 1s ease-in-out infinite;
+      }
+      @keyframes animateStar {
+        0% {
+          transform: translateY(0) scale(0.5);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(1000px) scale(2);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>OkabeSan</h1>
+    <p>My name is Okabe, you can text me down there.</p>
+    <a href="https://www.facebook.com/okabesan0">FACEBOOK</a>
+    <a href="https://www.instagram.com/oo__bk9/">INSTAGRAM</a>
+    <script>
+      document.querySelector("h1").addEventListener("click", function() {
+        alert("لك لا.");
+      });
+      document.querySelector("p").addEventListener("click", function() {
+        alert("اضغط على رابط مو هنا.");
+      });
+      for (let i = 0; i < 50; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.left = Math.random() * window.innerWidth + "px";
+        star.style.top = Math.random() * window.innerHeight + "px";
+        document.body.appendChild(star);
+      }
+    </script>
+  </body>
+</html>
